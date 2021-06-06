@@ -33,7 +33,6 @@ Application (with the embedded H2 database) is ready to be used ! You can access
 #### Restrictions
 - use java 8
 
-
 #### What we will look for
 - Readability of your code
 - Documentation
@@ -47,6 +46,16 @@ Application (with the embedded H2 database) is ready to be used ! You can access
 
 Please let us know more about your Java experience in a few sentences. For example:
 
-- I have 3 years experience in Java and I started to use Spring Boot from last year
-- I'm a beginner and just recently learned Spring Boot
-- I know Spring Boot very well and have been using it for many years
+- I have around 8 years of Development experience in Java and its related technologies like Spring, Boot, Spring JPA, Spring MVC, Spring Rest,Spring Security, Struts 2, JSP, Servlets, Hibernate.
+- I also have good knowledge on AWS and its Components(EC2 Container, SNS, SQS, Lambda, Cloudwatch,S3, IAM Role).
+- Deployed Rest services on AWS cloud using Docker and AWS CLI commands with use of Jenkins Pipeline
+- I have developed self sustainable Tool which learns the screen elements and put the user provided value in the screen using JSoup, Selenium. 
+
+#### Changes Made in Code
+- Added Spring Caching on "/employees/{employeeId" API.
+- Added Data validator for validating of data for post API using Spring validation framework..
+- Added Spring Basic Authentication Security using Spring Security.
+- Added Error DTO for giving error or NoTFound response
+- Added Pagination for get of all employess to increase the performance
+- Added Test cases for EmployeeController methods.
+- Changed the Getters & Setter from Field level to Class level.

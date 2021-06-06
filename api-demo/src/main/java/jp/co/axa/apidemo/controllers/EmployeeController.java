@@ -42,6 +42,14 @@ public class EmployeeController {
 		binder.addValidators(employeeDataValidator);
 	}
 
+	/**
+	 * Fetch Employees based on pagination if parameters are provided or else fetch all employess
+	 * 
+	 * @return List<Employee>
+	 * @param pageNo
+	 * @param pageSize
+	 * @param sortBy
+	 */
 	@GetMapping
 	public ResponseEntity<List<Employee>> getAllEmployees(@RequestParam(name = "pageNo") String pageNo,
 			@RequestParam(name = "pageSize") String pageSize, @RequestParam(name = "sortBy") String sortBy) {
@@ -53,6 +61,12 @@ public class EmployeeController {
 		return new ResponseEntity<List<Employee>>(list, new HttpHeaders(), HttpStatus.OK);
 	}
 
+	/**
+	 * Fetch Single Employee based on Employee Id
+	 * 
+	 * @return Employee
+	 * @param employeeId
+	 */
 	@GetMapping("/employees/{employeeId}")
 	public ResponseEntity getEmployee(@PathVariable(name = "employeeId") Long employeeId) {
 		Employee employee = employeeService.getEmployee(employeeId);
@@ -63,11 +77,21 @@ public class EmployeeController {
 		return new ResponseEntity<Employee>(employee, new HttpHeaders(), HttpStatus.OK);
 	}
 
+	/**
+	 * Save Employee
+	 * @return void 
+	 * @param Employee
+	 */
 	@PostMapping("/employees")
 	public void saveEmployee(@Valid @RequestBody Employee employee) {
 		employeeService.saveEmployee(employee);
 	}
 
+	/**
+	 * Delete Employee based on employeeId
+	 * @return void
+	 * @param Employee
+	 */
 	@DeleteMapping("/employees/{employeeId}")
 	public ResponseEntity deleteEmployee(@PathVariable(name = "employeeId") Long employeeId) {
 		Employee employee = employeeService.getEmployee(employeeId);
@@ -79,6 +103,11 @@ public class EmployeeController {
 		return new ResponseEntity(HttpStatus.OK);
 	}
 
+	/**
+	 * Update Employee based on employeeId
+	 * @return void
+	 * @param Employee
+	 */
 	@PutMapping("/employees/{employeeId}")
 	public ResponseEntity updateEmployee(@RequestBody Employee employee,
 			@PathVariable(name = "employeeId") Long employeeId) {
